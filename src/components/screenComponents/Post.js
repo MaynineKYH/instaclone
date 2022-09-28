@@ -121,5 +121,3 @@ const Post = () => {
 }
 
 export default Post
-
-// 1:21:19

@@ -73,4 +73,8 @@ export default function App() {
   );
 }
 
-//54:28 / 1:29:43
+
+//https://webnautes.tistory.com/1422
+
+
+// mockpath module error )mockpath 중복으로 오류발생_ 하위폴더의 github 관련 repository 폴더 제거하면 모듈 실행됨 
