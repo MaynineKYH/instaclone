@@ -1,7 +1,11 @@
 import { View, Text, ScrollView,TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import {FriendsProfileData} from '../screenComponents/Database'
+import AntDesign from 'react-native-vector-icons/AntDesign'
+import { useNavigation } from '@react-navigation/native'
+
 const Activity = () => {
+  const navigation = useNavigation();
   return (
     <View style={{
       width:'100%',
@@ -18,22 +22,31 @@ const Activity = () => {
         Activity
       </Text>
       <ScrollView style={{
-        margin:10
-      }}>
-        <Text style={{fontWeight:'bold'}}>This Week</Text>
+        margin:10 
+      }} showsVerticalScrollIndicator={false}>
+        <Text style={{fontWeight:'bold'}}>This week</Text>
         <View style={{flexDirection:'row',paddingVertical:10}}>
           {FriendsProfileData.slice(0,3).map((data,index)=>{
             return(
-              <TouchableOpacity key={index}>
-                <Text>{data.name}</Text>
+              <TouchableOpacity onPress={()=>navigation.push("FriendProfile",{
+                name:data.name,
+                profileImage : data.profileImage,
+                follow:data.follow,
+                post : data.posts,
+                followers : data.followers,
+                following : data.following
+              })} key={index}>
+                <Text>{data.name} </Text>
               </TouchableOpacity>
             )
             })}
-            <Text>Started following you</Text>
+            <Text> Started following you</Text>
         </View>
         <Text style={{fontWeight:'bold'}}>Earlier</Text>
         {
           FriendsProfileData.slice(3,6).map((data, index)=>{
+            const [follow, setFollow] = useState(data.follow)
+            
             return(
               <View key={index} style={{width:'100%'}}>
                 <View style={{
@@ -54,17 +67,122 @@ const Activity = () => {
                       borderRadius:100, 
                       marginRight:10}}/>
                   <Text style={{fontSize:15}}>
-                      <Text>
+                      <Text style={{fontWeight:'bold'}}>
                         {data.name}
                       </Text>
                       , I'm hitman
                   </Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={()=> setFollow(!follow)} style={{width: follow ? 72 : 68}}>
+                  <View style={{
+                    width:'100%',
+                    height:30,
+                    borderRadius:5,
+                    backgroundColor: follow ? null : '#3493D9',
+                    borderWidth:follow ? 1 : 0,
+                    borderColor: follow ? '#DEDEDE' : null,
+                    justifyContent:'center',
+                    alignItems:'center'
+                    }}>
+
+                    <Text style={{color: follow ? "black" : "white"}}>
+                      {follow ? "팔로잉" : "팔로우"}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
                 </View>
               </View>
             )
-          })
-        }
+          })}
+          <Text 
+            style={{fontWeight:'bold', paddingVertical:10}}>
+              추천하는 친구
+          </Text>
+            {FriendsProfileData.slice(6,12).map((data, index)=>{
+              const [follow, setFollow] = useState(data.follow);
+              const [close, setClose] = useState(false);
+              return(
+                <View key={index}>
+                    {
+                      close ? null : (
+                    
+                  <View style={{paddingVertical:10, flexDirection:'row', width:'100%', justifyContent:'space-between'}}>
+                    <View>
+                      <TouchableOpacity style={{flexDirection:'row',alignItems:'center', maxWidth:'64%'}}>
+                        <Image source={data.profileImage} style={{width:45, height:45, borderRadius:100, marginRight:10}}/>
+                        <View style={{width:'100%'}}>
+                          <Text style={{fontSize:14, fontWeight:'bold'}}>
+                            {data.name}
+                          </Text>
+                          <Text style={{fontSize:12, opacity:0.5}}>
+                            {data.accountName}
+                          </Text>
+                          <Text style={{fontSize:12, opacity:0.5}}>
+                            Suggested for you
+                          </Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
+                    <View style={{flexDirection:'row', alignItems:'center'}}>
+                      {
+                        follow ? (
+                          <TouchableOpacity onPress={()=>setFollow(!follow)} 
+                          style={{
+                            width: follow ? 90 : 68
+                          }}>
+                            <View style={{
+                              width:'100%',
+                              height:30,
+                              borderRadius:5,
+                              backgroundColor:follow ? null : "#3493D9",
+                              borderWidth:follow ? 1 : 0,
+                              borderColor:'#DEDEDE',
+                              justifyContent:'center',
+                              alignItems:'center'
+                            }}>
+                              <Text style={{color: follow ? 'black' : 'white'}}>
+                                {follow ? '팔로잉' : '팔로우'}
+                              </Text>
+                            </View>
+                          </TouchableOpacity>
+                        ) : (
+                          <>
+                          <TouchableOpacity onPress={()=> setFollow(!follow)} style={{
+                            width: follow ? 90 : 68
+                          }}>
+                            <View style={{
+                              width:'100%',
+                              height:30,
+                              borderRadius:5,
+                              backgroundColor:follow ? null : "#3493D9",
+                              borderWidth:follow ? 1 : 0,
+                              borderColor:'#DEDEDE',
+                              justifyContent:'center',
+                              alignItems:'center'
+                            }}>
+                              <Text style={{color: follow ? 'black' : 'white'}}>
+                                {follow ? "팔로잉" : "팔로우" }
+                              </Text>
+                            </View>
+                          </TouchableOpacity>
+                          <TouchableOpacity onPress={()=>setClose(true)} style=
+                          {{paddingHorizontal:10}}>
+                            <AntDesign name="close" style={{fontSize:14, color:'black', opacity:0.8}}/>
+                          </TouchableOpacity>
+                          </>
+                        )
+                      }
+                    </View>
+                  </View>
+                )}
+                </View>
+              )
+            })}
+            <View style={{padding:20}}>
+              <Text style={{color:'#3493D9'}}>
+                다른친구보기
+              </Text>
+            </View>
       </ScrollView>
     </View>
   )

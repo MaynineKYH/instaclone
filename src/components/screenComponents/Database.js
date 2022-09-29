@@ -46,7 +46,7 @@ export const FriendsProfileData = [
         followers:'48k',
         following:210,
         follow : false
-    },
+    }
     ,{
         name : "Spider_man",
         accountName : "spiderman",
@@ -55,7 +55,7 @@ export const FriendsProfileData = [
         followers:2367,
         following:652,
         follow : false
-    },
+    }
     ,{
         name : "Hit_man",
         accountName : "Hitman",
@@ -64,7 +64,7 @@ export const FriendsProfileData = [
         followers:745,
         following:467,
         follow : false
-    },
+    }
     ,{
         name : "Bat_man",
         accountName : "Batman",
@@ -75,36 +75,36 @@ export const FriendsProfileData = [
         follow : false
     }
     ,{
-        name : "dfhjdfg",
-        accountName : "dfhjdfg",
-        profileImage : require('../../storage/images/batman.jpg'),
+        name : "Captain_america",
+        accountName : "Captainamerica",
+        profileImage : require('../../storage/images/captain.jpg'),
         posts:11,
         followers:34673,
         following:7560,
         follow : false
     }
     ,{
-        name : "sdfjhdfh",
-        accountName : "sdfjhdfh",
-        profileImage : require('../../storage/images/batman.jpg'),
+        name : "Iron_man",
+        accountName : "Ironman",
+        profileImage : require('../../storage/images/ironman.jpg'),
         posts:11,
         followers:34673,
         following:7560,
         follow : false
     }
     ,{
-        name : "asdah",
-        accountName : "asdah",
-        profileImage : require('../../storage/images/batman.jpg'),
+        name : "Quick_silver",
+        accountName : "Quicksilver",
+        profileImage : require('../../storage/images/quicksilver.jpg'),
         posts:11,
         followers:34673,
         following:7560,
         follow : false
     }
     ,{
-        name : "sdf",
-        accountName : "asdah",
-        profileImage : require('../../storage/images/batman.jpg'),
+        name : "Bruce_banner",
+        accountName : "Brucebanner",
+        profileImage : require('../../storage/images/brucebanner.jpg'),
         posts:11,
         followers:34673,
         following:7560,

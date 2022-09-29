@@ -10,6 +10,7 @@ import Activity from './src/components/screens/Activity'
 import Profile from './src/components/screens/Profile'
 import Ionic from 'react-native-vector-icons/Ionicons'
 import Status from './src/components/screenComponents/Status';
+import FriendProfile from './src/components/screenComponents/FriendProfile'
 
 /* Android Emulator Pixel_3_XL_API_30 기준 */
 
@@ -68,13 +69,16 @@ export default function App() {
         }}>
         <Stack.Screen name="bottom" component={bottomTabScreen}/>
         <Stack.Screen name="Status" component={Status}/>
+        <Stack.Screen name="FriendProfile" component={FriendProfile}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
 
-//https://webnautes.tistory.com/1422
+//https://webnautes.tistory.com/1422 깃헙참고
 
 
 // mockpath module error )mockpath 중복으로 오류발생_ 하위폴더의 github 관련 repository 폴더 제거하면 모듈 실행됨 
+
+//navigation route.params

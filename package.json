@@ -20,7 +20,7 @@
     "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "react-native": "0.69.5",
+    "react-native": "0.69.6",
     "react-native-android-log": "^1.1.0",
     "react-native-app-console": "^0.1.35",
     "react-native-auto-height-image": "^3.2.4",
