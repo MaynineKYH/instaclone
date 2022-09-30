@@ -40,7 +40,7 @@ export const videoData = [
 export const FriendsProfileData = [
     {
         name : "Kim_chiman",
-        accountName : "Kimchiman",
+        accountName : "김치맨",
         profileImage : require('../../storage/images/kimchiman.jpg'),
         posts:2,
         followers:'48k',
@@ -49,7 +49,7 @@ export const FriendsProfileData = [
     }
     ,{
         name : "Spider_man",
-        accountName : "spiderman",
+        accountName : "스파이더맨",
         profileImage : require('../../storage/images/spiderman.jpg'),
         posts:68,
         followers:2367,
@@ -58,7 +58,7 @@ export const FriendsProfileData = [
     }
     ,{
         name : "Hit_man",
-        accountName : "Hitman",
+        accountName : "히트맨",
         profileImage : require('../../storage/images/hitman.jpg'),
         posts:7,
         followers:745,
@@ -67,7 +67,7 @@ export const FriendsProfileData = [
     }
     ,{
         name : "Bat_man",
-        accountName : "Batman",
+        accountName : "배트맨",
         profileImage : require('../../storage/images/batman.jpg'),
         posts:11,
         followers:34673,
@@ -76,7 +76,7 @@ export const FriendsProfileData = [
     }
     ,{
         name : "Captain_america",
-        accountName : "Captainamerica",
+        accountName : "캡틴아메리카",
         profileImage : require('../../storage/images/captain.jpg'),
         posts:11,
         followers:34673,
@@ -85,7 +85,7 @@ export const FriendsProfileData = [
     }
     ,{
         name : "Iron_man",
-        accountName : "Ironman",
+        accountName : "아이언맨",
         profileImage : require('../../storage/images/ironman.jpg'),
         posts:11,
         followers:34673,
@@ -94,7 +94,7 @@ export const FriendsProfileData = [
     }
     ,{
         name : "Quick_silver",
-        accountName : "Quicksilver",
+        accountName : "퀵실버",
         profileImage : require('../../storage/images/quicksilver.jpg'),
         posts:11,
         followers:34673,
@@ -103,7 +103,7 @@ export const FriendsProfileData = [
     }
     ,{
         name : "Bruce_banner",
-        accountName : "Brucebanner",
+        accountName : "브루스배너",
         profileImage : require('../../storage/images/brucebanner.jpg'),
         posts:11,
         followers:34673,

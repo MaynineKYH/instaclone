@@ -56,7 +56,14 @@ const Activity = () => {
                   paddingVertical:20,
                   width:'100%'
                 }}>
-                <TouchableOpacity 
+                <TouchableOpacity onPress={()=>navigation.push("FriendProfile",{
+                name:data.name,
+                profileImage : data.profileImage,
+                follow:follow,
+                post : data.posts,
+                followers : data.followers,
+                following : data.following
+              })}
                   style={{
                     flexDirection:'row',justifyContent:'space-between', alignItems:'center', maxWidth:'64%'}}>
                   <Image 
@@ -68,9 +75,9 @@ const Activity = () => {
                       marginRight:10}}/>
                   <Text style={{fontSize:15}}>
                       <Text style={{fontWeight:'bold'}}>
-                        {data.name}
+                        {data.name} 
                       </Text>
-                      , I'm hitman
+                        ,who you might know is on instagram
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=> setFollow(!follow)} style={{width: follow ? 72 : 68}}>
@@ -108,7 +115,15 @@ const Activity = () => {
                     
                   <View style={{paddingVertical:10, flexDirection:'row', width:'100%', justifyContent:'space-between'}}>
                     <View>
-                      <TouchableOpacity style={{flexDirection:'row',alignItems:'center', maxWidth:'64%'}}>
+                      <TouchableOpacity onPress={()=>navigation.push("FriendProfile",{
+                      name:data.name,
+                      profileImage : data.profileImage,
+                      follow:follow,
+                      post : data.posts,
+                      followers : data.followers,
+                      following : data.following
+                      })}
+                      style={{flexDirection:'row',alignItems:'center', maxWidth:'64%'}}>
                         <Image source={data.profileImage} style={{width:45, height:45, borderRadius:100, marginRight:10}}/>
                         <View style={{width:'100%'}}>
                           <Text style={{fontSize:14, fontWeight:'bold'}}>
