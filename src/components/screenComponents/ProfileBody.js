@@ -1,6 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, {useState} from 'react'
 import Feather from 'react-native-vector-icons/Feather'
+import {useNavigation} from '@react-navigation/native'
 
 export const ProfileBody =({
   name,
@@ -12,7 +13,34 @@ export const ProfileBody =({
 }) => {
   return (
     <View>
-      {accountName ? null : (
+      {accountName ? (
+        <View style={{flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'}}>
+          <View style={{flexDirection:'row',
+        alignItems:'center'}}>
+            <Text
+            style={{fontSize:18,
+            fontWeight:'bold'}}
+            >{accountName}</Text>
+            <Feather name='chevron-down'
+            style={{
+              fontSize:20,
+              color:'black',
+              paddingHorizontal:5,
+              opacity:0.5
+            }}
+            />
+          </View>
+          <View style={{flexDirection:'row', alignItems:'center'}}>
+            <Feather name="plus-square" style={{
+            fontSize:25,
+            color:'black'
+            }}/>
+            <Feather name='menu' style={{fontSize:25}}/>
+          </View>
+        </View>
+      ):null}
             <View style={{
               flexDirection:'row',
               alignItems:'center',
@@ -48,18 +76,50 @@ export const ProfileBody =({
                   <Text>팔로잉</Text>
                 </View>  
             </View>
-        )
-      }
+        
+      
     </View>
   )
 }
 
-export const ProfileButtons = ({id})=>{
+export const ProfileButtons = ({id, name,accountName, profileImage})=>{
+  const navigation = useNavigation();
   const [follow, setFollow] = useState(follow);
   return(
     <>
     {
-      id === 0 ? null : (
+      id === 0 ? (
+        <View style={{
+          width:'100%',
+          flexDirection:'row',
+          alignItems:'center',
+          justifyContent:'space-evenly',
+          paddingVertical:5
+        }}>
+          <TouchableOpacity
+          onPress={()=>navigation.push("EditProfile",{name:name, accountName:accountName, profileImage:profileImage})}
+          style={{
+            width:'100%'
+          }}>
+            <View style={{
+              width:'100%',
+              height:35,
+              borderRadius:5,
+              borderColor:'#DEDEDE',
+              borderWidth:1,
+              justifyContent:'center',
+              alignItems:'center'
+            }}>
+              <Text style={{
+                fontWeight:'bold',
+                fontSize:14,
+                letterSpacing:1,
+                opacity:0.8
+              }}>Edit profile</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      ) : (
         <View style={{
           width:'100%',
           flexDirection:'row',

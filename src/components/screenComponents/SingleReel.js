@@ -119,5 +119,3 @@ const SingleReel = ({item, index, currentIndex}) => {
 }
 
 export default SingleReel;
-
-//  4 -  1:39
