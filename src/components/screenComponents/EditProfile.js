@@ -4,7 +4,7 @@ import Ionic from 'react-native-vector-icons/Ionicons'
 
 
 const EditProfile = ({route, navigation}) => {
-  const {name, accoutName, profileImage} = route.params;
+  const {name, accountName, profileImage} = route.params;
   const TostMessage=()=>{
     ToastAndroid.show('프로필 수정 완료', ToastAndroid.SHORT);
   }
@@ -41,7 +41,7 @@ const EditProfile = ({route, navigation}) => {
       <View style={{
         padding:10
       }}>
-        <View>
+        <View  style={{paddingVertical:10}}>
           <Text style={{
             opacity:0.5
           }}>Name</Text>
@@ -51,6 +51,48 @@ const EditProfile = ({route, navigation}) => {
             borderColor:'#CDCDCD'
           }}/>
         </View>
+        <View style={{paddingVertical:10}}>
+          <Text style={{
+            opacity:0.5
+          }}>Username</Text>
+          <TextInput placeholder='accountName' defaultValue={accountName} style={{
+            fontSize:16,
+            borderBottomWidth:1,
+            borderColor:'#CDCDCD'
+          }}/>
+        </View>
+        <View style={{paddingVertical:10}}>
+          <Text style={{
+            opacity:0.5
+          }}>Website</Text>
+          <TextInput placeholder='Website' style={{
+            fontSize:16,
+            borderBottomWidth:1,
+            borderColor:'#CDCDCD'
+          }}/>
+        </View>
+        <View style={{paddingVertical:10}}>
+          <Text style={{
+            opacity:0.5
+          }}>Bio</Text>
+          <TextInput placeholder='Bio' style={{
+            fontSize:16,
+            borderBottomWidth:1,
+            borderColor:'#CDCDCD'
+          }}/>
+        </View>
+      </View>
+      <View>
+        <Text style={{
+          marginVertical:10, padding:10, color:'#3493D9', borderTopWidth:1, borderBottomWidth:1, borderColor:'#EFEFEF'
+        }}>
+          Switch to Professional accounts
+        </Text>
+        <Text style={{
+          marginVertical:10, padding:10, color:'#3493D9', borderTopWidth:1, borderBottomWidth:1, borderColor:'#EFEFEF'
+        }}>
+          Personal information setting
+        </Text>
       </View>
     </View>
   )
